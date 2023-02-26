@@ -142,5 +142,22 @@ function posicao_maior(vetor) {
 
 
 function repetidos(vetor) {
- // n sei fazer ;-;
+    let n_repetido = []
+    let posicao = 0
+
+ 
+    vetor.forEach(element => {
+        posicao = vetor.indexOf(element)
+        
+        for(let i = 0; i < vetor.lenght; i++){     // n funciona 
+            if(element == vetor[i]){
+                if(posicao != i){
+                    n_repetido.push(element)
+                }
+            }
+        }
+    });
+
+console.log(n_repetido)
+ 
 }
