@@ -1,5 +1,5 @@
 function principal(){
-    let vetor = [1,2,2,3,4,5,6,7,7,7,8,9,10,-6]
+    let vetor = [1,2,2,3,4,5,5,6,7,7,7,8,9,10,-6]
     let opcao = ""
 
     console.log(vetor);
@@ -18,26 +18,26 @@ function principal(){
         if (opcao == '1'){
             negativos(vetor);
         }
-        else if (opcao == 2){
+        else if (opcao == '2'){
             media_pares(vetor)
         }
-        else if (opcao == 3){
+        else if (opcao == '3'){
             multiplos(vetor)
         }
-        else if (opcao == 4){
+        else if (opcao == '4'){
             impares(vetor)
         }
-        else if (opcao == 5){
+        else if (opcao == '5'){
             menor_elemento(vetor)
         }
-        else if (opcao == 6){
+        else if (opcao == '6'){
             posicao_maior(vetor)
         }
-        else if (opcao == 7){
+        else if (opcao == '7'){
             repetidos(vetor)
         }
-        else if (opcao == 8){
-            
+        else if (opcao == '8'){
+            sem_repetidos(vetor)
         }
         else{
             
@@ -142,22 +142,43 @@ function posicao_maior(vetor) {
 
 
 function repetidos(vetor) {
+    let vetor2 =[]
+    let msg = ""
+    for (let i = 0; i < vetor.length; i++) {    
+         vetor2.push(vetor[i])
+
+    }
+
+    vetor.forEach((valor,index)=> {
+       
+        for (let i = 0; i < vetor2.length; i++) {
+            if (valor == vetor2[i] && index != i) {    
+                msg = "Há numeros repetidos"
+            }else{
+                msg= "Não há repetidos"
+            }
+       }
+        
+    });
+    console.log(msg)
+}
+
+
+function sem_repetidos(vetor) {
     let n_repetido = []
-    let posicao = 0
 
  
-    vetor.forEach(element => {
-        posicao = vetor.indexOf(element)
-        
-        for(let i = 0; i < vetor.lenght; i++){     // n funciona 
-            if(element == vetor[i]){
-                if(posicao != i){
-                    n_repetido.push(element)
-                }
+   vetor.forEach((valor,index) => {
+       for (let i = 0; i < vetor.length; i++) {
+        if (valor == vetor[i]) {
+            if (index != i) {
+                vetor.splice(i,1)
             }
         }
-    });
+        
+       }
+   });
 
-console.log(n_repetido)
- 
+   console.log(vetor)
+
 }
