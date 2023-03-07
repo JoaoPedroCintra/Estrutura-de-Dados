@@ -5,16 +5,16 @@ function insercaoDireta(vetor) {
             if (vetor[i] < vetor[j]) {
                 var aux = vetor[i]
                for (let k = i; k > j; k--) {
-                   vetor[k] = vetor [k-1]
+                   vetor[k] = vetor[k-1]
                }
+                vetor[j] = aux
             }
-            vetor[j] = aux
         }
     }
 }
    
 
-vetor = [7, 3, 1, 9, 2]
+let vetor = [7, 3, 1, 9, 2]
 
 console.log(vetor)
 insercaoDireta(vetor)

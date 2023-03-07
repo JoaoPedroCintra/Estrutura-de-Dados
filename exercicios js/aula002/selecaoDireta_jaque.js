@@ -23,9 +23,6 @@ console.log(vetor)
 selecaoDireta(vetor)
 console.log(vetor)
 
-console.time(`selecaoDireta1...`)
-selecaoDireta(vetor)
-console.timeEnd(`selecaoDireta1...`)
 
 console.time(`selecaoDireta...`)
 selecaoDireta(vetor)
