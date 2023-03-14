@@ -1,5 +1,5 @@
 //14/03/2023
-//Busca Sequencial e Binária
+//Busca Binária
 
 function ordenacao(vetor) {
 
