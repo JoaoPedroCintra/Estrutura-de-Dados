@@ -1,71 +1,56 @@
 function bubblesort(vetor) {  
-    let testes =[]
-    for (let i = 0; i < 1000; i++) {
-        testes.push(vetor[i])
-    }  
-   
     let aux = 0
-    for (let i = 0; i < testes.length-1;i++) {
-        for (let j = 0; j < testes.length-i-1; j++) {
-            if (testes[j] > testes[j + 1]) {
-                aux = testes[j]
-                testes[j] = testes[j + 1]
-                testes[j + 1] = aux
+    for (let i = 0; i < vetor.length-1;i++) {
+        for (let j = 0; j < vetor.length-i-1; j++) {
+            if (vetor[j] > vetor[j + 1]) {
+                aux = vetor[j]
+                vetor[j] = vetor[j + 1]
+                vetor[j + 1] = aux
             }
         }
     }
        
-    return testes
+    return vetor
 }
 
 
 function selecaoDireta(vetor){
-
-    let testes =[]
-    for (let i = 0; i < 1000; i++) {
-        testes.push(vetor[i])
-    }  
     
-    for(var i = 0; i < testes.length; i++){
-        var menor = testes[i]
+    for(var i = 0; i < vetor.length; i++){
+        var menor = vetor[i]
         var pos = i
 
-        for(var j = i + 1; j < testes.length; j++){
-            if(testes[j] < menor){
-                aux = testes[j]
-                menor = testes[j]
+        for(var j = i + 1; j < vetor.length; j++){
+            if(vetor[j] < menor){
+                aux = vetor[j]
+                menor = vetor[j]
                 pos = j
             }
         }
-        var aux = testes[i]
-        testes[i] = testes[pos]
-        testes[pos] = aux
+        var aux = vetor[i]
+        vetor[i] =  vetor[pos]
+        vetor[pos] = aux
     }
 
-    return testes
+    return vetor
 }
 
 
 function insercaoDireta(vetor) {
 
-    let testes =[]
-    for (let i = 0; i < 1000; i++) {
-        testes.push(vetor[i])
-    }  
-
-    for (let i = 1; i < testes.length ; i++) {
+    for (let i = 1; i < vetor.length ; i++) {
         for(let j = 0; j < i ; j++){
-            if (testes[i] < testes[j]) {
-                var aux = testes[i]
+            if (vetor[i] < vetor[j]) {
+                var aux = vetor[i]
                for (let k = i; k > j; k--) {
-                   testes[k] = testes[k-1]
+                   vetor[k] = vetor[k-1]
                }
-                testes[j] = aux
+                vetor[j] = aux
             }
         }
     }
 
-    return testes
+    return vetor
 }
 
 
@@ -88,93 +73,111 @@ for(let k = 0; k < 1000; k++){
 }
 
 
-//teste1 bubblesort
-console.log("bubblesort ")
-//console.log(vetor_ordenado)
-console.log( bubblesort(vetor_ordenado))
-
-console.time("vetor ordenado:...")
-bubblesort(vetor_ordenado)                                      
-console.timeEnd("vetor ordenado:...")
+//bubblesort 
+let bubble_ordenado = vetor_ordenado.slice() 
+let bubble_invertido = vetor_invertido.slice() 
+let bubble_desordenado = vetor_desordenado.slice() 
 
 
-//teste2 bubblesort
-//console.log(vetor_desordenado)
-console.log( bubblesort(vetor_desordenado)) 
-
-console.time("vetor desordenado:...")
-bubblesort(vetor_desordenado)                                    
-console.timeEnd("vetor desordenado:...")
+//ordenado
+console.log("----------bubblesort----------")
+//console.log(bubble_ordenado)
+console.log( bubblesort(bubble_ordenado))
 
 
-//teste3 bubblesort
-//console.log(vetor_invertido )
-console.log( bubblesort(vetor_invertido)) 
-
-console.time("vetor invertido:...")
-bubblesort(vetor_invertido)                  
-console.timeEnd("vetor invertido:...")
-
-console.log("\n")
+console.time("vetor ordenado...")
+bubblesort(bubble_ordenado)                                      
+console.timeEnd("vetor ordenado...")
 
 
+//invertido
+//console.log(bubble_invertido)
+console.log( bubblesort(bubble_invertido)) 
+
+console.time("vetor invertido...")
+bubblesort(bubble_invertido)                                    
+console.timeEnd("vetor invertido...")
 
 
-//teste1 Seleçao Direta
-console.log("seleçao direta")
-//console.log(vetor_ordenado)
-console.log( selecaoDireta(vetor_ordenado))
+//desordenado
+//console.log(bubble_desordenado )
+console.log( bubblesort(bubble_desordenado)) 
 
-console.time("vetor ordenado:...")
-selecaoDireta(vetor_ordenado)                                      
-console.timeEnd("vetor ordenado:...")
-
- 
-//teste2 Seleçao Direta
-//console.log(vetor_desordenado)
-console.log( selecaoDireta(vetor_desordenado)) 
-
-console.time("vetor desordenado:...")
-selecaoDireta(vetor_desordenado)                                    
-console.timeEnd("vetor desordenado:...")
-
-
-
-
-//teste3 Seleçao Direta
-//console.log(vetor_invertido)
-console.log( selecaoDireta(vetor_invertido)) 
-console.time("vetor invertido:...")
-selecaoDireta(vetor_invertido)                  
-console.timeEnd("vetor invertido:...")
-
+console.time("vetor desordenado...")
+bubblesort(bubble_desordenado)                  
+console.timeEnd("vetor desordenado...")
 
 console.log("\n")
 
 
-//teste1 Inserção Direta
-console.log("Inserção direta")
-//console.log(vetor_ordenado)
-console.log( insercaoDireta(vetor_ordenado))
+//   Seleção Direta
+let selecao_ordenado = vetor_ordenado.slice() 
+let selecao_invertido = vetor_invertido.slice() 
+let selecao_desordenado = vetor_desordenado.slice() 
 
-console.time("vetor ordenado:...")
-insercaoDireta(vetor_ordenado)                                      
-console.timeEnd("vetor ordenado:...")
-
-
-//teste2 Inserção Direta
-//console.log(vetor_desordenado)
-console.log( insercaoDireta(vetor_desordenado)) 
-
-console.time("vetor desordenado:...")
-insercaoDireta(vetor_desordenado)                                    
-console.timeEnd("vetor desordenado:...")
+//ordenado
+console.log("----------Seleção Direta----------")
+//console.log(selecao_ordenado)
+console.log( selecaoDireta(selecao_ordenado))
 
 
-//teste3 Inserção Direta
-//console.log(vetor_invertido)
-console.log( insercaoDireta(vetor_invertido)) 
+console.time("vetor ordenado...")
+selecaoDireta(selecao_ordenado)                                      
+console.timeEnd("vetor ordenado...")
 
-console.time("vetor invertido:...")
-insercaoDireta(vetor_invertido)                  
-console.timeEnd("vetor invertido:...")
+
+//invertido
+//console.log(selecao_invertido)
+console.log( selecaoDireta(selecao_invertido)) 
+
+console.time("vetor invertido...")
+selecaoDireta(selecao_invertido)                                    
+console.timeEnd("vetor invertido...")
+
+
+//desordenado
+//console.log(selecao_desordenado )
+console.log( selecaoDireta(selecao_desordenado)) 
+
+console.time("vetor desordenado...")
+selecaoDireta(selecao_desordenado)                  
+console.timeEnd("vetor desordenado...")
+
+console.log("\n")
+
+
+// Inserção Direta
+let insercao_ordenado = vetor_ordenado.slice() 
+let insercao_invertido = vetor_invertido.slice() 
+let insercao_desordenado = vetor_desordenado.slice() 
+
+
+//ordenado
+console.log("----------Inserção Direta---------- ")
+//console.log(insercao_ordenado)
+console.log( insercaoDireta(insercao_ordenado))
+
+
+console.time("vetor ordenado...")
+insercaoDireta(insercao_ordenado)                                      
+console.timeEnd("vetor ordenado...")
+
+
+//invertido
+//console.log(insercao_invertido)
+console.log( insercaoDireta(insercao_invertido)) 
+
+console.time("vetor invertido...")
+insercaoDireta(insercao_invertido)                                    
+console.timeEnd("vetor invertido...")
+
+
+//desordenado
+//console.log(insercao_desordenado )
+console.log( insercaoDireta(insercao_desordenado)) 
+
+console.time("vetor desordenado...")
+insercaoDireta(insercao_desordenado)                  
+console.timeEnd("vetor desordenado...")
+
+console.log("\n")
