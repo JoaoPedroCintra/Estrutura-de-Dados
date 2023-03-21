@@ -1,3 +1,5 @@
+//Atividade Ordenação - João Pedro Cintra e Heitor Ramos
+
 function bubblesort(vetor) {  
     let aux = 0
     for (let i = 0; i < vetor.length-1;i++) {
