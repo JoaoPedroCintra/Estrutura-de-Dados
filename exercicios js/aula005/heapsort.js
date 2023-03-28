@@ -1,6 +1,7 @@
-//21/03/23
-//quicksort
-function quicksort(vetor,esquerda,direita) {
+let vetor = [3,7,1,6,4,5,2]
+
+
+
     var i = esquerda
     var j = direita
     var aux
@@ -27,10 +28,3 @@ function quicksort(vetor,esquerda,direita) {
     if ( i < direita )
         quicksort(vetor,i,direita)
     return vetor
-
-}   
-
-let vetor = [ 7,3,8,1,2,5,9,4,10]
-
-quicksort(vetor,0,vetor.length-1)
-console.log(vetor)
