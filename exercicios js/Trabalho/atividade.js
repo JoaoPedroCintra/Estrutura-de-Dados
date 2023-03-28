@@ -87,28 +87,28 @@ function quicksort(vetor,esquerda,direita) {
 
 
 
-let vetor_ordenado = []
-let vetor_invertido = []
-let vetor_desordenado = []
+let vetor_ordenado1000 = []
+let vetor_invertido1000 = []
+let vetor_desordenado1000 = []
 
 for (let i = 0; i < 1000; i++) {
-    vetor_ordenado.push(i+1)
+    vetor_ordenado1000.push(i+1)
   
 }    
 
 for(let j = 1000; j > 0; j --){
-    vetor_invertido.push(j)
+    vetor_invertido1000.push(j)
 }
 
 for(let k = 0; k < 1000; k++){
-    vetor_desordenado.push(Math.floor(Math.random()*1000) )
+    vetor_desordenado1000.push(Math.floor(Math.random()*1000) )
 }
 
 
-//bubblesort 
-let bubble_ordenado = vetor_ordenado.slice() 
-let bubble_invertido = vetor_invertido.slice() 
-let bubble_desordenado = vetor_desordenado.slice() 
+//bubblesort -----------------------------------------------------------------------------------------------------------------------------------
+let bubble_ordenado = vetor_ordenado1000.slice() 
+let bubble_invertido = vetor_invertido1000.slice() 
+let bubble_desordenado = vetor_desordenado1000.slice() 
 
 
 //ordenado
@@ -142,10 +142,10 @@ console.timeEnd("vetor desordenado...")
 console.log("\n")
 
 
-//   Seleção Direta
-let selecao_ordenado = vetor_ordenado.slice() 
-let selecao_invertido = vetor_invertido.slice() 
-let selecao_desordenado = vetor_desordenado.slice() 
+//   Seleção Direta ---------------------------------------------------------------------------------------------------------------------------
+let selecao_ordenado = vetor_ordenado1000.slice() 
+let selecao_invertido = vetor_invertido1000.slice() 
+let selecao_desordenado = vetor_desordenado1000.slice() 
 
 //ordenado
 console.log("----------Seleção Direta----------")
@@ -178,10 +178,10 @@ console.timeEnd("vetor desordenado...")
 console.log("\n")
 
 
-// Inserção Direta
-let insercao_ordenado = vetor_ordenado.slice() 
-let insercao_invertido = vetor_invertido.slice() 
-let insercao_desordenado = vetor_desordenado.slice() 
+// Inserção Direta -------------------------------------------------------------------------------------------------------------------------
+let insercao_ordenado = vetor_ordenado1000.slice() 
+let insercao_invertido = vetor_invertido1000.slice() 
+let insercao_desordenado = vetor_desordenado1000.slice() 
 
 
 //ordenado
