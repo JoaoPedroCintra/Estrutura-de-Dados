@@ -13,3 +13,31 @@ function hanoi (n,origem,destino,aux){
 }
 
 hanoi(3,"A","B","C")
+
+
+
+
+/*  hanoi(2,"A","C","B") {
+            hanoi(1,A,B,C){
+                console.log("Mova o disco do pino "+ A + " para o pino "+ B)
+            }
+        console.log("Mova o disco do pino " + A + " para o pino " + C)
+            hanoi(1,B,C,A){
+                console.log("Mova o disco do pino "+ B + " para o pino "+ C)
+            }
+
+    }
+
+    console.log("Mova o disco do pino " + A + " para o pino " + B)
+
+    hanoi(2,"C","B","A") {
+            hanoi(1,C,B,A){
+                console.log("Mova o disco do pino "+ C + " para o pino "+ B)
+            }
+        console.log("Mova o disco do pino " + C + " para o pino " + B)
+            hanoi(1,A,B,C){
+                console.log("Mova o disco do pino "+ A + " para o pino "+ B)
+            }
+    }
+
+*/

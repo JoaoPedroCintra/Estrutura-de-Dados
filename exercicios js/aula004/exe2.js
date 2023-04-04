@@ -20,7 +20,7 @@ function quicksort(vetor,esquerda,direita) {
             j--
         }
     }   
-
+  
     //Recursão
     if(esquerda < j )
         quicksort(vetor,esquerda,j)

@@ -19,3 +19,6 @@ console.log(vetor)
 console.time("bubblesort...")
 bubblesortjaque(vetor)                                              
 console.timeEnd("bubblesort...")
+
+
+
