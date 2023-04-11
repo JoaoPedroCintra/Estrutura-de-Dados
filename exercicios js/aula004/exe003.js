@@ -25,12 +25,9 @@ while(vetor[i] == "(" || vetor[i] == "[" || vetor[i] == "{")
     i++
 }
 
-vetor = vetor - vetor2.length
+vetor2.length * vetor.shift()
 
-while(vetor[i] == "(" || vetor[i] == "[" || vetor[i] == "{")
-{
-    vetor2.push(vetor[i])
-    i++
-}
+
 
 console.log(vetor2)
+console.log(vetor)
