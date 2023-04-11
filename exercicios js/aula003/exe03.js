@@ -1,6 +1,5 @@
 //14/03/2023
-//Busca Binária
-
+//Busca Binária      
 function ordenacao(vetor) {
 
     for (let i = 1; i < vetor.length; i++) {
@@ -17,34 +16,23 @@ function ordenacao(vetor) {
     return vetor
 }
 
-function Busca_binária(vetor, num) {
-    let metade = Math.floor(vetor.lenght / 2)
-    let resposta
+function busca_binaria(vetor, valorBusca) {     // retorna a posição
+    let ini = 0
+    let fim = vetor.length - 1
+    while (fim >= ini) {
+        let meio = Math.floor((ini + fim) / 2)
 
-    if (vetor[metade] > num) {
-        for (let i = 0; i < metade; i++) {
-            if (num == vetor[i]) {
-                resposta = -1
-                return resposta
-            }
-            else {
-                resposta = "n existe"
-            }
+        if (valorBusca === vetor[meio]) {
+            return meio
         }
-        return resposta
+        else if (valorBusca > vetor[meio]) {
+            ini = meio + 1
+        }
+        else {
+            fim = meio - 1
+        }
     }
-
-
-    else if (vetor[metade] < num) {
-
-    }
-
-
-    else if (vetor[metade] == 0) {
-
-    } 
-
-
+    return - 1
 }
 
 
@@ -52,5 +40,5 @@ let vetor = [7, 3, 9, 6, 1, 4, 10, 2]
 console.log(vetor)
 ordenacao(vetor)
 console.log(vetor)
-result = Busca_binária(vetor, 6)
+let result = busca_binaria(vetor,7)
 console.log(result)

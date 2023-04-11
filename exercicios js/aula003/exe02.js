@@ -17,27 +17,24 @@ function Busca_Sequencial(vetor, num) {
 
 let vetor = [7, 3, 9, 6, 1, 4, 10, 2]
 console.log(vetor)
-let result = Busca_Sequencial(vetor, 6)
-console.log(result)
-
-
-
+let resultado = Busca_Sequencial(vetor, 6)
+console.log(resultado)
 
 
 
 
 
 //Busca Sequencial Jaqueline
-function Busca_Sequencial(vetor, num) {
-    for (let i = 0; i < vetor.length; i++) {
-        if (num == vetor[i]) {
+function Busca_Sequencial(vet, num) {
+    for (let i = 0; i < vet.length; i++) {
+        if (num == vet[i]) {
            return i
         }
     }
     return -1
 }
 
-let vetor = [7, 3, 9, 6, 1, 4, 10, 2]
-console.log(vetor)
-let result = Busca_Sequencial(vetor, 6)
+let vet = [7, 3, 9, 6, 1, 4, 10, 2]
+console.log(vet)
+let result = Busca_Sequencial(vet, 6)
 console.log(result)
