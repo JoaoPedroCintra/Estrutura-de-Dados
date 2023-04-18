@@ -2,9 +2,8 @@
 //usando pilha
 var pilha = []
 var vetor = []
-let cont = 0
-
-expressao = "{(1+2)5}[6+7]"
+let indice = 0
+let expressao = "{(1+2)5}[6+7]"
 vetor = expressao.split("")
 
 console.log(vetor)
@@ -13,21 +12,29 @@ for (var i = 0; i < vetor.length; i++) {
 
     if (vetor[i] == "{" || vetor[i] == "(" || vetor[i] == "[") {
         pilha.push(vetor[i])
-        console.log(pilha)
-        cont++
     }
+    else if (vetor[i] == "}" || vetor[i] == ")" || vetor[i] == "]") {
+        pilha.push(vetor[i])
 
-    if (vetor[i] == "}" && pilha[cont - 1] == "{") {
-        pilha.pop()
-    }
-    else if (vetor[i] == "]" && pilha[cont - 1] == "[") {
-        pilha.pop()
+        indice = pilha.length - 1
 
+        if (pilha[indice] == "}" && pilha[indice - 1] == "{") {
+            pilha.splice((indice - 1), 2)
+        }
+        else if (pilha[indice] == "]" && pilha[indice - 1] == "[") {
+            pilha.splice((indice - 1), 2)
+        }
+        else if (pilha[indice] == ")" && pilha[indice - 1] == "(") {
+            pilha.splice((indice - 1), 2)
+        }
     }
-    else if (vetor[i] == ")" && pilha[cont - 1] == "(") {
-        pilha.pop()
-    }
-
 }
 
-console.log(pilha)
+if(pilha.length == 0){
+    console.log("A pilha está vazia :")
+    console.log(pilha)
+}
+else {
+    console.log("Erro! A pilha não está vazia:")
+    console.log(pilha)
+}
