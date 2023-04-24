@@ -3,13 +3,13 @@
 var pilha = []
 var vetor = []
 let indice = 0
-let expressao = "{(1+2)5}[6+7]"
+let expressao = "{(1+2)5} - [6+7]"
 vetor = expressao.split("")
 
 console.log(vetor)
 
 for (var i = 0; i < vetor.length; i++) {
-
+    
     if (vetor[i] == "{" || vetor[i] == "(" || vetor[i] == "[") {
         pilha.push(vetor[i])
     }
@@ -31,7 +31,7 @@ for (var i = 0; i < vetor.length; i++) {
 }
 
 if(pilha.length == 0){
-    console.log("A pilha está vazia :")
+    console.log("A Expressão está correta!! \npilha vazia :")
     console.log(pilha)
 }
 else {
