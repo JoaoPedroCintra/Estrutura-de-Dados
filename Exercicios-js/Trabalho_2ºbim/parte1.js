@@ -1,6 +1,8 @@
-function trabalho_1(expressao) {
-    var pilha = []
-    let vetor = expressao.split("")
+// Nomes: Heitor Ramos e João Pedro Cintra     3ºADS_M
+//Pilha
+function conferir_expressao(expressao) {
+    let pilha = []
+    let vetor = expressao
     console.log(vetor)
 
     for (var i = 0; i < vetor.length; i++) {
@@ -40,4 +42,4 @@ function trabalho_1(expressao) {
 }
 
 let expressao = "{(1+25) - [6+7]}"
-trabalho_1(expressao)
+conferir_expressao(expressao)
