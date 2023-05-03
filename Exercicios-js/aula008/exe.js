@@ -23,15 +23,26 @@ function linkedList() {
             current.next = node;
         }
         length++
-
     }
 
     this.size = function (){
         return length;
     };
+    
+    this.toString = function(){
+        let current = head, string = " "
+        while(current){                     
+            string += current.element + (current.next ? "->" : "")     
+//                                    condição ? Verdadeiro : Falso
+            current = current.next
+        }
+        return string
+    }
 }
 
 lista = new linkedList();
 lista.append(10);
 lista.append(12);
+lista.append(5);
 console.log(lista.size());
+console.log(lista.toString())
