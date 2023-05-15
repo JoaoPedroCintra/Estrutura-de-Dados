@@ -56,7 +56,7 @@ inserir_tabela(vet_hash, "L")
 inserir_tabela(vet_hash, "K") // k % 13 = 11 ocupa pos[11] e a única que sobra é a pos[4]
 inserir_tabela(vet_hash, "h") // h % 13 = 8, percorre o vetor até o fim, volta para o início e se instala na pos[4]
 inserir_tabela(vet_hash, "C") //Neste momento a tabela está cheia, para qualquer elemento inserido terá uma mensagem de erro.
-Buscar_chaves(vet_hash, "e")
+Buscar_chaves(vet_hash, "e") // retorna a posição em que está no vetor
 
 
 /*
