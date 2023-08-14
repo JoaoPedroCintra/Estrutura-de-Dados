@@ -2,7 +2,7 @@
 //Pilha
 function conferir_expressao(expressao) {
     let pilha = []
-    let vetor = expressao
+    let vetor = expressao.split("")
     console.log(vetor)
 
     for (var i = 0; i < vetor.length; i++) {
